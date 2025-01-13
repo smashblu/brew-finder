@@ -10,7 +10,7 @@ body {
 }
 
 .header {
-    background-color: #ffffff;
+    background-color: lightblue;
     overflow: visible;
     margin: -10px;
     padding: 20px 20px;
@@ -25,11 +25,30 @@ body {
 }
 
 .header a {
-    color: blue;
+    color: black;
+}
+
+.main {
+    display: flex;
+}
+
+.column {
+    padding: 25px;
+    margin: auto;
+}
+
+#sidebar {
+    flex: 1;
+    border-right: 1px solid black;
+    /* For flexbox visibility, remove in final */
+}
+
+#map-frame {
+    flex: 3;
 }
 
 .footer {
-    background-image: linear-gradient(#548347, #444444);
+    background-color: grey;
     padding-bottom: 250px;
     margin-bottom: -250px;
 }
