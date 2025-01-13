@@ -1,0 +1,35 @@
+html,
+body {
+    height: 100%;
+}
+
+.full-page {
+    overflow: hidden;
+    min-height: 100%;
+    min-width: 960px;
+}
+
+.header {
+    background-color: #ffffff;
+    overflow: visible;
+    margin: -10px;
+    padding: 20px 20px;
+}
+
+.header img {
+    max-width: 5%;
+}
+
+.header .dropdown {
+    float: right;
+}
+
+.header a {
+    color: blue;
+}
+
+.footer {
+    background-image: linear-gradient(#548347, #444444);
+    padding-bottom: 250px;
+    margin-bottom: -250px;
+}
