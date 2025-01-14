@@ -43,7 +43,7 @@ body {
     /* For flexbox visibility, remove in final */
 }
 
-#map-frame {
+#map {
     flex: 3;
 }
 
