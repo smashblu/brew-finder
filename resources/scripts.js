@@ -19,14 +19,14 @@ async function zipSearch(zip) {
                 }
 
                 const json = await response.json();
-                console.log(json);
         } catch (error) {
                 console.error(error.message);
         }
+        return json;
 }
 
-async function listSearchData(objArr) {
-        //
+function listSearchData(objArr) {
+        console.log(objArr);
 }
 
 const brewDB = 'https://api.openbrewerydb.org/v1/breweries';
