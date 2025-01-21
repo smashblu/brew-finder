@@ -5,10 +5,10 @@ const map = new mapboxgl.Map({
         zoom: 9
 });
 
-async function zipSearch() {
-        const brewDB = "https://api.openbrewerydb.org/v1/breweries";
+async function zipSearch(zip) {
+        const byPostal = '?by_postal='
         try {
-                const response = await fetch(brewDB);
+                const response = await fetch(`${brewDB}${byPostal}${zip}&per_page=3`);
                 if (!response.ok) {
                         throw new Error(`Response status: ${response.status}`);
                 }
@@ -19,3 +19,5 @@ async function zipSearch() {
                 console.error(error.message);
         }
 }
+
+const brewDB = 'https://api.openbreydb.org/v1/breweries';
