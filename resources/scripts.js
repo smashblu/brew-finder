@@ -6,7 +6,8 @@ const map = new mapboxgl.Map({
 });
 
 async function getUserZip() {
-        console.log('Submit button clicked');
+        const userZip = zipDialog.value;
+        listSearchData(zipSearch(userZip));
 }
 
 async function zipSearch(zip) {
@@ -22,6 +23,10 @@ async function zipSearch(zip) {
         } catch (error) {
                 console.error(error.message);
         }
+}
+
+async function listSearchData(objArr) {
+        //
 }
 
 const brewDB = 'https://api.openbrewerydb.org/v1/breweries';
