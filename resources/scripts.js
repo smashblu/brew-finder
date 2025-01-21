@@ -20,4 +20,4 @@ async function zipSearch(zip) {
         }
 }
 
-const brewDB = 'https://api.openbreydb.org/v1/breweries';
+const brewDB = 'https://api.openbrewerydb.org/v1/breweries';
