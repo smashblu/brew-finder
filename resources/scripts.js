@@ -5,6 +5,10 @@ const map = new mapboxgl.Map({
         zoom: 9
 });
 
+async function getUserZip() {
+        console.log('Submit button clicked');
+}
+
 async function zipSearch(zip) {
         const byPostal = '?by_postal='
         try {
@@ -23,3 +27,5 @@ async function zipSearch(zip) {
 const brewDB = 'https://api.openbrewerydb.org/v1/breweries';
 const zipDialog = document.getElementById('locationWithZipCode');
 const zipButton = document.getElementById('submitZip');
+
+zipButton.addEventListener('click', getUserZip);
