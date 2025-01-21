@@ -21,3 +21,5 @@ async function zipSearch(zip) {
 }
 
 const brewDB = 'https://api.openbrewerydb.org/v1/breweries';
+const zipDialog = document.getElementById('locationWithZipCode');
+const zipButton = document.getElementById('submitZip');
