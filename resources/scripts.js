@@ -28,9 +28,6 @@ async function zipSearch(zip) {
 
 function listSearchData(objArr) {
         // console.log(objArr);
-        for (const breweries of objArr) {
-                console.log(breweries);
-        }
 }
 
 const brewDB = 'https://api.openbrewerydb.org/v1/breweries';
