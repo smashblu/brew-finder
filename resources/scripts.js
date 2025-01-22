@@ -12,21 +12,25 @@ async function getUserZip() {
 
 async function zipSearch(zip) {
         const byPostal = '?by_postal='
+        let brewSet = [];
         try {
                 const response = await fetch(`${brewDB}${byPostal}${zip}&per_page=3`);
                 if (!response.ok) {
                         throw new Error(`Response status: ${response.status}`);
                 }
 
-                const json = await response.json();
+                brewSet = await response.json();
         } catch (error) {
                 console.error(error.message);
         }
-        return json;
+        return brewSet;
 }
 
 function listSearchData(objArr) {
-        console.log(objArr);
+        // console.log(objArr);
+        for (const breweries of objArr) {
+                console.log(breweries);
+        }
 }
 
 const brewDB = 'https://api.openbrewerydb.org/v1/breweries';
