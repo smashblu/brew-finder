@@ -12,18 +12,18 @@ async function getUserZip() {
 
 async function zipSearch(zip) {
         const byPostal = '?by_postal='
-        let brewSet = [];
         try {
                 const response = await fetch(`${brewDB}${byPostal}${zip}&per_page=3`);
                 if (!response.ok) {
                         throw new Error(`Response status: ${response.status}`);
                 }
 
-                brewSet = await response.json();
+                let brewSet = await response.json();
+                return brewSet;
         } catch (error) {
                 console.error(error.message);
         }
-        return brewSet;
+        return;
 }
 
 function listSearchData(objArr) {
