@@ -6,11 +6,15 @@ const map = new mapboxgl.Map({
 });
 
 async function getUserZip() {
+        console.log('start getUserZip');
         const userZip = zipDialog.value;
         listSearchData(zipSearch(userZip));
+        console.log('start getUserZip');
+        return;
 }
 
 async function zipSearch(zip) {
+        console.log('start zipSearch');
         const byPostal = '?by_postal='
         try {
                 const response = await fetch(`${brewDB}${byPostal}${zip}&per_page=3`);
@@ -19,15 +23,20 @@ async function zipSearch(zip) {
                 }
 
                 let brewSet = await response.json();
+                console.log('end zipSearch with data');
                 return brewSet;
         } catch (error) {
                 console.error(error.message);
         }
+        console.log('end zipSearch, no data');
         return;
 }
 
 function listSearchData(objArr) {
-        // console.log(objArr);
+        console.log('start listSearchData');
+        console.log(objArr);
+        console.log('end listSearchData');
+        return;
 }
 
 const brewDB = 'https://api.openbrewerydb.org/v1/breweries';
