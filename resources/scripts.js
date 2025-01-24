@@ -5,9 +5,9 @@ const map = new mapboxgl.Map({
         zoom: 9
 });
 
-async function getUserZip() {
-        const userZip = zipDialog.value;
-        listSearchData(await zipSearch(userZip));
+async function getUserInput() {
+        const searchResults = await zipSearch(zipDialog.value);
+        printList(searchResults);
         return;
 }
 
@@ -27,7 +27,7 @@ async function zipSearch(zip) {
         return;
 }
 
-function listSearchData(objArr) {
+function printList(objArr) {
         for (const breweries of objArr) {
                 console.log(breweries);
         }
@@ -38,4 +38,4 @@ const brewDB = 'https://api.openbrewerydb.org/v1/breweries';
 const zipDialog = document.getElementById('locationWithZipCode');
 const zipButton = document.getElementById('submitZip');
 
-zipButton.addEventListener('click', getUserZip);
+zipButton.addEventListener('click', getUserInput);
