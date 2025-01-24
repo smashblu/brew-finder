@@ -7,10 +7,7 @@ const map = new mapboxgl.Map({
 
 async function getUserZip() {
         const userZip = zipDialog.value;
-        const testData = await zipSearch(userZip);
-        for (const breweries of testData) {
-                console.log(breweries);
-        }
+        listSearchData(await zipSearch(userZip));
         return;
 }
 
@@ -31,7 +28,9 @@ async function zipSearch(zip) {
 }
 
 function listSearchData(objArr) {
-        console.log(objArr);
+        for (const breweries of objArr) {
+                console.log(breweries);
+        }
         return;
 }
 
