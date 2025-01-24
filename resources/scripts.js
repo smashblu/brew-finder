@@ -6,15 +6,15 @@ const map = new mapboxgl.Map({
 });
 
 async function getUserZip() {
-        console.log('start getUserZip');
         const userZip = zipDialog.value;
-        listSearchData(zipSearch(userZip));
-        console.log('start getUserZip');
+        const testData = await zipSearch(userZip);
+        for (const breweries of testData) {
+                console.log(breweries);
+        }
         return;
 }
 
 async function zipSearch(zip) {
-        console.log('start zipSearch');
         const byPostal = '?by_postal='
         try {
                 const response = await fetch(`${brewDB}${byPostal}${zip}&per_page=3`);
@@ -22,20 +22,16 @@ async function zipSearch(zip) {
                         throw new Error(`Response status: ${response.status}`);
                 }
 
-                let brewSet = await response.json();
-                console.log('end zipSearch with data');
+                const brewSet = await response.json();
                 return brewSet;
         } catch (error) {
                 console.error(error.message);
         }
-        console.log('end zipSearch, no data');
         return;
 }
 
 function listSearchData(objArr) {
-        console.log('start listSearchData');
         console.log(objArr);
-        console.log('end listSearchData');
         return;
 }
 
