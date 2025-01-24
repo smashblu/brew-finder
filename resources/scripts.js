@@ -28,13 +28,21 @@ async function zipSearch(zip) {
 }
 
 function printList(objArr) {
+        document.querySelectorAll(".list-item").forEach(el => el.remove());
         for (const breweries of objArr) {
-                console.log(breweries);
+                const divItem = document.createElement('div');
+                const nameItem = document.createElement('a');
+                divSidebar.appendChild(divItem);
+                divItem.appendChild(nameItem);
+                divItem.setAttribute('class', 'list-item');
+                nameItem.innerHTML = breweries.name;
+                nameItem.setAttribute('href', breweries.website_url);
         }
         return;
 }
 
 const brewDB = 'https://api.openbrewerydb.org/v1/breweries';
+const divSidebar = document.getElementById('sidebar');
 const zipDialog = document.getElementById('locationWithZipCode');
 const zipButton = document.getElementById('submitZip');
 
