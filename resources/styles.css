@@ -43,12 +43,18 @@ body {
     /* For flexbox visibility, remove in final */
 }
 
-#map {
-    flex: 3;
-}
+.list-item {
+    padding: 3px;
+    margin-top: 3px;
+    border: 1px solid black;
+    border-radius: 5px;
 
-.footer {
-    background-color: grey;
-    padding-bottom: 250px;
-    margin-bottom: -250px;
-}
+    #map {
+        flex: 3;
+    }
+
+    .footer {
+        background-color: grey;
+        padding-bottom: 250px;
+        margin-bottom: -250px;
+    }
