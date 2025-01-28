@@ -53,7 +53,7 @@ function placeMarkers(objArr) {
                         .setPopup(
                                 new mapboxgl.Popup({ offset: 25 })
                                         .setHTML(
-                                                `<h3>${brewery.name}</h3><p>${brewery.address_1}</p>`
+                                                `<h3>${brewery.name}</h3><p>${brewery.address_1}</p><p>${brewery.city}, ${brewery.state_province} ${brewery.postal_code}</p>`
                                         )
                         )
                         .addTo(map);
