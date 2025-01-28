@@ -52,10 +52,10 @@ body {
 }
 
 .marker {
+    background-image: url('../images/red_marker.png');
     background-size: cover;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    width: 35px;
+    height: 56px;
     cursor: pointer;
 }
 

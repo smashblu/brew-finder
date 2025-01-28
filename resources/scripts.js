@@ -2,6 +2,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic21hc2hibHUiLCJhIjoiY201eDF0dTI5MDRpMTJqcTVie
 const map = new mapboxgl.Map({
         container: 'map',
         center: [-117.65, 34.1],
+        //style: 'mapbox://styles/mapbox/streets-v12',
         zoom: 9
 });
 
@@ -47,8 +48,7 @@ function placeMarkers(objArr) {
                 const location = [parseFloat(brewery.longitude), parseFloat(brewery.latitude)];
                 const el = document.createElement('div');
                 el.className = 'marker';
-                new mapboxgl.Marker().setLngLat(location).addTo(map); // Marker() should pass (el) but not working
-                new mapboxgl.Marker()
+                new mapboxgl.Marker(el)
                         .setLngLat(location)
                         .setPopup(
                                 new mapboxgl.Popup({ offset: 25 })
