@@ -24,11 +24,11 @@ async function zipSearch(zip) {
         } catch (error) {
                 console.error(error.message);
         }
-        return;
+        return [];
 }
 
 function printList(objArr) {
-        document.querySelectorAll(".list-item").forEach(el => el.remove());
+        document.querySelectorAll('.list-item').forEach(el => el.remove());
         for (const breweries of objArr) {
                 const divItem = document.createElement('div');
                 const nameItem = document.createElement('a');
