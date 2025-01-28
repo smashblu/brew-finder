@@ -1,13 +1,14 @@
 mapboxgl.accessToken = 'pk.eyJ1Ijoic21hc2hibHUiLCJhIjoiY201eDF0dTI5MDRpMTJqcTVieTNuZHNweCJ9.ynSYSc_J3rnPLBf9zR3rWw';
 const map = new mapboxgl.Map({
         container: 'map',
-        center: [-74.5, 40],
+        center: [-117.65, 34.1],
         zoom: 9
 });
 
 async function getUserInput() {
         const searchResults = await zipSearch(zipDialog.value);
         printList(searchResults);
+        placeMarkers(searchResults);
         return;
 }
 
@@ -29,16 +30,34 @@ async function zipSearch(zip) {
 
 function printList(objArr) {
         document.querySelectorAll('.list-item').forEach(el => el.remove());
-        for (const breweries of objArr) {
+        for (const brewery of objArr) {
                 const divItem = document.createElement('div');
                 const nameItem = document.createElement('a');
                 divSidebar.appendChild(divItem);
                 divItem.appendChild(nameItem);
                 divItem.setAttribute('class', 'list-item');
-                nameItem.innerHTML = breweries.name;
-                nameItem.setAttribute('href', breweries.website_url);
+                nameItem.innerHTML = brewery.name;
+                nameItem.setAttribute('href', brewery.website_url);
         }
         return;
+}
+
+function placeMarkers(objArr) {
+        for (const brewery of objArr) {
+                const location = [parseFloat(brewery.longitude), parseFloat(brewery.latitude)];
+                const el = document.createElement('div');
+                el.className = 'marker';
+                new mapboxgl.Marker().setLngLat(location).addTo(map); // Marker() should pass (el) but not working
+                new mapboxgl.Marker()
+                        .setLngLat(location)
+                        .setPopup(
+                                new mapboxgl.Popup({ offset: 25 })
+                                        .setHTML(
+                                                `<h3>${brewery.name}</h3><p>${brewery.address_1}</p>`
+                                        )
+                        )
+                        .addTo(map);
+        }
 }
 
 const brewDB = 'https://api.openbrewerydb.org/v1/breweries';
