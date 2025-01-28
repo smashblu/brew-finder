@@ -22,14 +22,16 @@
             <h1>Brew Finder</h1>
         </div>
         <div class="main">
-            <div class="column" id="sidebar">
+            <div id="sidebar">
                 <div class="mb-3">
                     <label for="locationWithZipCode" class="form-label">Zip Code</label>
                     <input type="text" class="form-control" id="locationWithZipCode" placeholder="12345">
                     <button type="button" id="submitZip" class="btn btn-primary">Submit</button>
                 </div>
             </div>
-            <div class="column" id="map"></div>
+            <div id="map-container">
+                <div id="map"></div>
+            </div>
         </div>
         <div class="footer">
             <table id="site-map">
