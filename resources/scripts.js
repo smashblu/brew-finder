@@ -38,6 +38,7 @@ function printList(objArr) {
                 divItem.setAttribute('class', 'list-item');
                 nameItem.innerHTML = brewery.name;
                 nameItem.setAttribute('href', brewery.website_url);
+                nameItem.setAttribute('target', '_blank');
         }
         return;
 }
