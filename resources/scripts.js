@@ -28,9 +28,9 @@ async function zipSearch(zip) {
         return [];
 }
 
-function printList(objArr) {
+function printList(breweries) {
         document.querySelectorAll('.list-item').forEach(el => el.remove());
-        for (const brewery of objArr) {
+        for (const brewery of breweries) {
                 const divItem = document.createElement('div');
                 const nameItem = document.createElement('a');
                 divSidebar.appendChild(divItem);
@@ -43,8 +43,8 @@ function printList(objArr) {
         return;
 }
 
-function placeMarkers(objArr) {
-        for (const brewery of objArr) {
+function placeMarkers(breweries) {
+        for (const brewery of breweries) {
                 const location = [parseFloat(brewery.longitude), parseFloat(brewery.latitude)];
                 const el = document.createElement('div');
                 el.className = 'marker';
