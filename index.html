@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <title>Brew Finder</title>
     <link rel="stylesheet" href="resources/styles.css">
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.9.2/mapbox-gl.css" rel="stylesheet">
@@ -22,22 +22,23 @@
             <h1>Brew Finder</h1>
         </div>
         <div class="main">
-            <div class="column" id="sidebar">
+            <div id="sidebar">
                 <div class="mb-3">
                     <label for="locationWithZipCode" class="form-label">Zip Code</label>
-                    <input type="number" class="form-control" id="locationWithZipCode" placeholder="12345">
+                    <input type="text" class="form-control" id="locationWithZipCode" placeholder="12345">
+                    <button type="button" id="submitZip" class="btn btn-primary">Submit</button>
                 </div>
             </div>
-            <div class="column" id="map"></div>
+            <div id="map"></div>
         </div>
         <div class="footer">
             <table id="site-map">
                 <tr>
                     <td>
-                        <a href="pages/rules.html">Rules</a>
+                        <a href="pages/about.html">About</a>
                     </td>
                     <td>
-                        <a href="pages/contact.html">Contact</a>
+                        <a></a>
                     </td>
                 </tr>
             </table>
