@@ -31,11 +31,11 @@ async function zipSearch(zip) {
 function printList(breweries) {
         document.querySelectorAll('.list-item').forEach(el => el.remove());
         for (const brewery of breweries) {
-                const divItem = document.createElement('div');
+                const listDiv = document.createElement('div');
                 const nameItem = document.createElement('a');
-                divSidebar.appendChild(divItem);
-                divItem.appendChild(nameItem);
-                divItem.setAttribute('class', 'list-item');
+                divSidebar.appendChild(listDiv);
+                listDiv.appendChild(nameItem);
+                listDiv.setAttribute('class', 'list-item');
                 nameItem.innerHTML = brewery.name;
                 nameItem.setAttribute('href', brewery.website_url);
                 nameItem.setAttribute('target', '_blank');
