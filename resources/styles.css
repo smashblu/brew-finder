@@ -35,6 +35,25 @@
     margin-bottom: -15px;
 }
 
+.enter-zip {
+    display: block;
+}
+
+.enter-zip>div {
+    float: left;
+}
+
+.enter-zip .side-input {
+    display: inline-block !important;
+    width: 80% !important;
+    padding-right: 5px;
+}
+
+.enter-zip .side-button {
+    display: inline-block !important;
+    width: calc(20% - 1px) !important;
+}
+
 .marker {
     background-image: url('../images/red_marker.png');
     background-size: cover;
