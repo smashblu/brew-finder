@@ -52,6 +52,7 @@
 .enter-zip .side-button {
     display: inline-block;
     width: calc(20% - 1px);
+    padding-bottom: 15px;
 }
 
 .marker {
@@ -88,7 +89,7 @@
 
 .list-item {
     padding: 3px;
-    margin-top: 3px;
+    margin-top: 6px;
     border: 1px solid black;
     border-radius: 5px;
     width: 200%;
