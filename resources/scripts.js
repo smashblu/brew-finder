@@ -15,7 +15,7 @@ async function getUserInput() {
 async function zipSearch(zip) {
         const byPostal = '?by_postal='
         try {
-                const response = await fetch(`${brewDB}${byPostal}${zip}&per_page=3`);
+                const response = await fetch(`${brewDB}${byPostal}${zip}`);
                 if (!response.ok) {
                         throw new Error(`Response status: ${response.status}`);
                 }
