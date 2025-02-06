@@ -44,14 +44,14 @@
 }
 
 .enter-zip .side-input {
-    display: inline-block !important;
-    width: 80% !important;
+    display: inline-block;
+    width: 80%;
     padding-right: 5px;
 }
 
 .enter-zip .side-button {
-    display: inline-block !important;
-    width: calc(20% - 1px) !important;
+    display: inline-block;
+    width: calc(20% - 1px);
 }
 
 .marker {
@@ -91,6 +91,7 @@
     margin-top: 3px;
     border: 1px solid black;
     border-radius: 5px;
+    width: 200%;
 }
 
 .footer {

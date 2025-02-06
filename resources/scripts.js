@@ -33,7 +33,7 @@ function printList(breweries) {
         for (const brewery of breweries) {
                 const listDiv = document.createElement('div');
                 const nameItem = document.createElement('a');
-                divSidebar.appendChild(listDiv);
+                divSubSide.appendChild(listDiv);
                 listDiv.appendChild(nameItem);
                 listDiv.setAttribute('class', 'list-item');
                 nameItem.innerHTML = brewery.name;
@@ -62,6 +62,7 @@ function placeMarkers(breweries) {
 
 const brewDB = 'https://api.openbrewerydb.org/v1/breweries';
 const divSidebar = document.getElementById('sidebar');
+const divSubSide = document.getElementById('sub-side');
 const zipDialog = document.getElementById('locationWithZipCode');
 const zipButton = document.getElementById('submitZip');
 
