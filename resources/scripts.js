@@ -30,15 +30,20 @@ async function zipSearch(zip) {
 
 function printList(breweries) {
         document.querySelectorAll('.list-item').forEach(el => el.remove());
+        let listNum = 1;
         for (const brewery of breweries) {
                 const listDiv = document.createElement('div');
+                const listItem = document.createElement('a');
                 const nameItem = document.createElement('a');
                 divSubSide.appendChild(listDiv);
+                listDiv.appendChild(listItem);
                 listDiv.appendChild(nameItem);
                 listDiv.setAttribute('class', 'list-item');
+                listItem.innerHTML = `${listNum}. `;
                 nameItem.innerHTML = brewery.name;
                 nameItem.setAttribute('href', brewery.website_url);
                 nameItem.setAttribute('target', '_blank');
+                listNum++;
         }
         return;
 }
