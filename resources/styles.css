@@ -28,6 +28,7 @@
 }
 
 .main {
+    font-family: Helvetica;
     display: flex;
     padding: 1%;
     position: relative;
