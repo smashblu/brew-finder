@@ -83,17 +83,13 @@
 }
 
 .mapboxgl-popup-content {
+    background: lightblue;
     text-align: center;
-    font-family: 'Open Sans', sans-serif;
-    border-top: 5px solid blue;
-}
-
-.mapboxgl-popup-content h3 {
-    color: blue;
+    border-top: 10px solid blue;
 }
 
 .mapboxgl-popup-content p {
-    color: red;
+    text-align: left;
 }
 
 .footer {
