@@ -88,8 +88,13 @@
     border-top: 10px solid blue;
 }
 
+.mapboxgl-popup-content h3 {
+    border-bottom: 1px solid black;
+}
+
 .mapboxgl-popup-content p {
     text-align: left;
+    margin-bottom: 1px;
 }
 
 .footer {
