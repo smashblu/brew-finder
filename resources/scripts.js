@@ -68,7 +68,7 @@ function placeMarkers(breweries) {
 const brewDB = 'https://api.openbrewerydb.org/v1/breweries';
 const divSidebar = document.getElementById('sidebar');
 const divSubSide = document.getElementById('sub-side');
-const zipDialog = document.getElementById('locationWithZipCode');
+const zipDialog = document.getElementById('location-with-zip');
 const zipButton = document.getElementById('submit-zip');
 
 zipButton.addEventListener('click', getUserInput);
