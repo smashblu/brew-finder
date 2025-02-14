@@ -15,7 +15,7 @@ async function getUserInput() {
 async function zipSearch(zip) {
         const byPostal = '?by_postal='
         try {
-                const response = await fetch(`${brewDB}${byPostal}${zip}&per_page=3`);
+                const response = await fetch(`${brewDB}${byPostal}${zip}`);
                 if (!response.ok) {
                         throw new Error(`Response status: ${response.status}`);
                 }
@@ -30,15 +30,20 @@ async function zipSearch(zip) {
 
 function printList(breweries) {
         document.querySelectorAll('.list-item').forEach(el => el.remove());
+        let listNum = 1;
         for (const brewery of breweries) {
-                const divItem = document.createElement('div');
+                const listDiv = document.createElement('div');
+                const listItem = document.createElement('a');
                 const nameItem = document.createElement('a');
-                divSidebar.appendChild(divItem);
-                divItem.appendChild(nameItem);
-                divItem.setAttribute('class', 'list-item');
+                divSubSide.appendChild(listDiv);
+                listDiv.appendChild(listItem);
+                listDiv.appendChild(nameItem);
+                listDiv.setAttribute('class', 'list-item');
+                listItem.innerHTML = `${listNum}. `;
                 nameItem.innerHTML = brewery.name;
                 nameItem.setAttribute('href', brewery.website_url);
                 nameItem.setAttribute('target', '_blank');
+                listNum++;
         }
         return;
 }
@@ -62,6 +67,7 @@ function placeMarkers(breweries) {
 
 const brewDB = 'https://api.openbrewerydb.org/v1/breweries';
 const divSidebar = document.getElementById('sidebar');
+const divSubSide = document.getElementById('sub-side');
 const zipDialog = document.getElementById('locationWithZipCode');
 const zipButton = document.getElementById('submitZip');
 
