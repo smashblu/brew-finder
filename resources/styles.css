@@ -76,6 +76,11 @@
     width: 35px;
     height: 56px;
     cursor: pointer;
+    text-align: center;
+}
+
+.marker b {
+    font-size: large;
 }
 
 .mapboxgl-popup {

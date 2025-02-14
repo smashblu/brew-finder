@@ -49,10 +49,12 @@ function printList(breweries) {
 }
 
 function placeMarkers(breweries) {
+        let listNum = 1;
         for (const brewery of breweries) {
                 const location = [parseFloat(brewery.longitude), parseFloat(brewery.latitude)];
                 const el = document.createElement('div');
                 el.className = 'marker';
+                el.innerHTML = `<span><b>${listNum}</b></span>`;
                 new mapboxgl.Marker(el)
                         .setLngLat(location)
                         .setPopup(
@@ -62,6 +64,7 @@ function placeMarkers(breweries) {
                                         )
                         )
                         .addTo(map);
+                listNum++;
         }
 }
 
