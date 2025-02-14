@@ -54,7 +54,7 @@ function placeMarkers(breweries) {
                 const location = [parseFloat(brewery.longitude), parseFloat(brewery.latitude)];
                 const el = document.createElement('div');
                 el.className = 'marker';
-                el.innerHTML = `<span><b>${listNum}</b></span>`;
+                el.innerHTML = `<b>${listNum}</b>`;
                 new mapboxgl.Marker(el)
                         .setLngLat(location)
                         .setPopup(
