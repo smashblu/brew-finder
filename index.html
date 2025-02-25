@@ -19,14 +19,18 @@
 <body>
     <div id="full-page">
         <div class="header">
-            <h1>Brew Finder</h1>
+            <h1><img src="images/brew-finder_logo.png"> Brew Finder</h1>
         </div>
         <div class="main">
             <div id="sidebar">
-                <div class="mb-3">
-                    <label for="locationWithZipCode" class="form-label">Zip Code</label>
-                    <input type="text" class="form-control" id="locationWithZipCode" placeholder="12345">
-                    <button type="button" id="submitZip" class="btn btn-primary">Submit</button>
+                <div class="col-lg-4 enter-zip" id="sub-side">
+                    <label for="location-with-zip" class="form-label">Zip Code</label>
+                    <div class="side-input">
+                        <input type="text" class="form-control" id="location-with-zip" placeholder="12345">
+                    </div>
+                    <div class="side-button">
+                        <button type="button" id="submit-zip" class="btn btn-primary">Submit</button>
+                    </div>
                 </div>
             </div>
             <div id="map"></div>
