@@ -1,0 +1,20 @@
+{
+  "name": "brew-finder",
+  "version": "1.0.0",
+  "description": "![GitHub commit activity](https://img.shields.io/github/commit-activity/w/smashblu/brew-finder) ![GitHub last commit](https://img.shields.io/github/last-commit/smashblu/brew-finder)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smashblu/brew-finder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smashblu/brew-finder/issues"
+  },
+  "homepage": "https://github.com/smashblu/brew-finder#readme"
+}
