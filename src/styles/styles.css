@@ -1,0 +1,139 @@
+.full-page {
+    overflow: hidden;
+    min-height: 100%;
+    min-width: 960px;
+}
+
+.header {
+    background-color: lightblue;
+    overflow: visible;
+    margin: -10px;
+    padding: 20px 20px;
+    position: relative;
+    z-index: 1000;
+}
+
+.header img {
+    max-width: 5%;
+    vertical-align: text-bottom;
+}
+
+.header h1 {
+    padding-left: 1%;
+    color: white;
+    font-family: Helvetica;
+    font-size: 65px;
+    text-shadow: 2px 2px 4px darkblue;
+    -webkit-text-stroke: 2px black;
+}
+
+.main {
+    font-family: Helvetica;
+    display: flex;
+    padding: 1%;
+    position: relative;
+    z-index: 1;
+}
+
+#sidebar {
+    flex: 1;
+    right: 0;
+    padding-right: 20px;
+}
+
+#map {
+    flex: 3;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    margin-top: -20px;
+    margin-bottom: -1%;
+}
+
+.enter-zip {
+    display: block;
+}
+
+.enter-zip>div {
+    float: left;
+}
+
+.enter-zip .side-input {
+    display: inline-block;
+    width: 80%;
+    padding-right: 5px;
+}
+
+.enter-zip .side-button {
+    display: inline-block;
+    width: calc(20% - 1px);
+    padding-bottom: 15px;
+}
+
+.marker {
+    /* background-image: url('../images/red_marker.png'); */
+    background-size: cover;
+    width: 35px;
+    height: 56px;
+    cursor: pointer;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.marker:hover {
+    /* background-image: url('../images/yellow_marker.png'); */
+}
+
+.marker b {
+    color: white;
+    font-size: large;
+    -webkit-text-stroke: 1px black;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+    background: lightblue;
+    text-align: center;
+    border-top: 10px solid blue;
+}
+
+.mapboxgl-popup-content h3 {
+    border-bottom: 1px solid black;
+}
+
+.mapboxgl-popup-content p {
+    text-align: left;
+    margin-bottom: 1px;
+}
+
+.footer {
+    background-color: grey;
+    padding-bottom: 250px;
+    margin-bottom: -250px;
+}
+
+.list-item {
+    padding: 3px;
+    margin-top: 6px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 200%;
+}
+
+.footer {
+    background-color: grey;
+    padding-bottom: 250px;
+    margin-bottom: -250px;
+    position: relative;
+    z-index: 1000;
+}
+
+rect.btn {
+    stroke: #fff;
+    fill: #fff;
+    fill-opacity: 0;
+    stroke-opacity: 0;
+}

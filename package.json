@@ -1,20 +1,18 @@
 {
-  "name": "brew-finder",
-  "version": "1.0.0",
-  "description": "A React site that will find breweries in any given area.",
-  "main": "index.js",
+  "dependencies": {
+    "next": "^15.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/smashblu/brew-finder.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/smashblu/brew-finder/issues"
-  },
-  "homepage": "https://github.com/smashblu/brew-finder#readme"
+  "devDependencies": {
+    "@types/node": "22.13.5",
+    "@types/react": "19.0.10",
+    "typescript": "5.7.3"
+  }
 }
