@@ -1,7 +1,7 @@
 {
   "name": "brew-finder",
   "version": "1.0.0",
-  "description": "![GitHub commit activity](https://img.shields.io/github/commit-activity/w/smashblu/brew-finder) ![GitHub last commit](https://img.shields.io/github/last-commit/smashblu/brew-finder)",
+  "description": "A React site that will find breweries in any given area.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
