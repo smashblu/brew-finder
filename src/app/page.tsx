@@ -1,5 +1,6 @@
 import '@/styles/styles.css'
+import { Header } from '@/ui/header.tsx'
 
 export default function Page() {
-        return <h1 className='header'>Hello, Next.js!</h1>
+        return <Header />
 }
