@@ -1,9 +1,9 @@
-import { BrewFinderLogo } from '@/public/brew-finder_logo.png'
-
-export default function Header() {
+export function Header() {
     return (
         <div className="header">
-            <BrewFinderLogo /> <h1>Brew Finder</h1>
+            <h1>
+                <img src="brewfinder_logo.png" /> Brew Finder
+            </h1>
         </div>
     )
 }
