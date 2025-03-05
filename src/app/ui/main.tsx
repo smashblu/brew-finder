@@ -1,8 +1,10 @@
+import '@/styles/main.css'
+
 export function Sidebar() {
         return (
                 <div className="sidebar">
                         <div className="col-lg-4 enter-zip" id="sub-side">
-                                <label for="location-with-zip" className="form-label">Zip Code</label>
+                                <label htmlFor="location-with-zip" className="form-label">Zip Code</label>
                                 <div className="side-input">
                                         <input type="text" className="form-control" id="location-with-zip" placeholder="12345" />
                                 </div>
