@@ -1,3 +1,6 @@
+
+import '@/styles/main.css'
+
 export function SubmitButton({ text, style }) {
         return (
                 <button className={style}>{text}</button>
