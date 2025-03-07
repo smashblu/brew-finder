@@ -1,21 +1,27 @@
 import '@/styles/main.css'
 
-export function SubmitButton({ text, style }) {
+export function FormButton({ text, style }) {
         return (
                 <button className={style}>{text}</button>
+        )
+}
+
+export function FormInput({ type, style, id, placeholder }) {
+        return (
+                <input type={type} className={style} id={id} placeholder={placeholder}></input>
         )
 }
 
 export function Sidebar() {
         return (
                 <div>
-                        <div className="enter-zip" id="sub-side">
+                        <div id="sub-side">
                                 <label htmlFor="location-with-zip" className="form-label">Zip Code</label>
                                 <div className="side-input">
-                                        <input type="text" className="form-control" id="location-with-zip" placeholder="12345" />
+                                        <FormInput type={'text'} style={'form-control'} id={'location-with-zip'} placeholder={'12345'} />
                                 </div>
                                 <div className="side-button">
-                                        <SubmitButton text={'Submit'} style={'side-button'} />
+                                        <FormButton text={'Submit'} style={'side-button'} />
                                 </div>
                         </div>
                 </div>
