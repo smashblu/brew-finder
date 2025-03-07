@@ -1,5 +1,11 @@
 import '@/styles/main.css'
 
+export function FormLabel({ text, style, htmlfor }) {
+        return (
+                <label htmlFor={htmlfor} className={style}>{text}</label>
+        )
+}
+
 export function FormButton({ text, style }) {
         return (
                 <button className={style}>{text}</button>
@@ -16,7 +22,7 @@ export function Sidebar() {
         return (
                 <div>
                         <div id="sub-side">
-                                <label htmlFor="location-with-zip" className="form-label">Zip Code</label>
+                                <FormLabel htmlfor={'location-with-zip'} style={'form-label'} text={'Zip Code'} />
                                 <div className="side-input">
                                         <FormInput type={'text'} style={'form-control'} id={'location-with-zip'} placeholder={'12345'} />
                                 </div>
