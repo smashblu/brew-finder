@@ -1,4 +1,3 @@
-
 import '@/styles/main.css'
 
 export function SubmitButton({ text, style }) {
