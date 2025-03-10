@@ -6,9 +6,9 @@ export function FormLabel({ text, style, htmlfor }) {
         )
 }
 
-export function FormButton({ text, style, onButtonClick }) {
+export function FormButton({ text, style, handleClick }) {
         return (
-                <button className={style} onClick={onButtonClick}>{text}</button>
+                <button className={style} onClick={handleClick}>{text}</button>
         )
 }
 
@@ -33,7 +33,7 @@ export function Sidebar() {
                                         <FormInput type={'text'} style={'form-control'} id={'location-with-zip'} placeholder={'12345'} />
                                 </div>
                                 <div className="side-button">
-                                        <FormButton text={'Submit'} style={'side-button'} onButtonClick={() => handleClick('test')} />
+                                        <FormButton text={'Submit'} style={'side-button'} onClick={handleClick('test')} />
                                 </div>
                         </div>
                 </div>
