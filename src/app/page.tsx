@@ -1,12 +1,15 @@
 import '@/styles/page.css'
 import { Header } from '@/ui/header.tsx'
-import { Sidebar } from '@/ui/main.tsx'
+import { Sidebar, Mapbox } from '@/ui/main.tsx'
 
 export default function Page() {
   return (
     <div className="full-page">
       <Header />
-      <Sidebar />
+      <div className='main'>
+        <Sidebar />
+        <Mapbox />
+      </div>
     </div>
   );
 }

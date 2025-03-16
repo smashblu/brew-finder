@@ -31,7 +31,7 @@ export function Sidebar() {
     }
   }
   return (
-    <div>
+    <div id="sidebar">
       <div id="sub-side">
         <form action={handleClick}>
           <FormLabel htmlfor={'location-with-zip'} style={'form-label'} text={'Zip Code'} />
@@ -44,5 +44,11 @@ export function Sidebar() {
         </form>
       </div>
     </div>
+  )
+}
+
+export function Mapbox() {
+  return (
+    <div id="map"></div>
   )
 }
