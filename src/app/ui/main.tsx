@@ -22,13 +22,32 @@ export function FormInput({ type, style, id, placeholder }) {
   )
 }
 
-export function Sidebar() {
-  function handleClick(e) {
-    const zipCode = e.get('zip')
-    if (zipCode) {
-      return <h1>{zipCode}</h1>
+export async function Sidebar() {
+  async function handleClick(e) {
+    const userZip = e.get('zip')
+    if (userZip) {
+      const searchResults = await zipSearch(userZip);
+      
     }
   }
+
+  async function zipSearch(zip) {
+    const brewDB = 'https://api.openbrewerydb.org/v1/breweries';
+    const byPostal = '?by_postal='
+    try {
+      const response = await fetch(`${brewDB}${byPostal}${zip}`);
+        if (!response.ok) {
+          throw new Error(`Response status: ${response.status}`);
+        }
+
+      const brewSet = await response.json();
+      return brewSet;
+    } catch (error) {
+      console.error(error.message);
+    }
+    return [];
+  }
+
   return (
     <div id="sidebar">
       <div id="sub-side">
