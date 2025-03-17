@@ -1,6 +1,8 @@
 'use client'
 
 import '@/styles/main.css'
+import 'mapbox-gl/dist/mapbox-gl.css';
+import mapboxgl from 'mapbox-gl'
 
 export function FormLabel({ text, style, htmlfor }) {
   return (
@@ -9,7 +11,6 @@ export function FormLabel({ text, style, htmlfor }) {
 }
 
 export function FormButton({ text, style, handleClick }) {
-  console.log(text, style, handleClick)
   return (
     <button className={style}>{text}</button>
   )
@@ -24,9 +25,7 @@ export function FormInput({ type, style, id, placeholder }) {
 export function Sidebar() {
   function handleClick(e) {
     const zipCode = e.get('zip')
-    console.log(`e: ${e}`, `zipcode: ${zipCode}`)
     if (zipCode) {
-      console.log(`true: ${zipCode}`)
       return <h1>{zipCode}</h1>
     }
   }
@@ -48,6 +47,13 @@ export function Sidebar() {
 }
 
 export function Mapbox() {
+  mapboxgl.accessToken = 'pk.eyJ1Ijoic21hc2hibHUiLCJhIjoiY201eDF0dTI5MDRpMTJqcTVieTNuZHNweCJ9.ynSYSc_J3rnPLBf9zR3rWw';
+  const map = new mapboxgl.Map({
+          container: 'map',
+          center: [-117.65, 34.1],
+          zoom: 9
+  });
+
   return (
     <div id="map"></div>
   )
