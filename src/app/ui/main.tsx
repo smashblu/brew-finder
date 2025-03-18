@@ -46,14 +46,16 @@ export function Sidebar() {
   )
 }
 
-export function Mapbox() {
+export function CreateMap() {
   mapboxgl.accessToken = 'pk.eyJ1Ijoic21hc2hibHUiLCJhIjoiY201eDF0dTI5MDRpMTJqcTVieTNuZHNweCJ9.ynSYSc_J3rnPLBf9zR3rWw';
   const map = new mapboxgl.Map({
-          container: 'map',
-          center: [-117.65, 34.1],
-          zoom: 9
+    container: 'map',
+    center: [-117.65, 34.1],
+    zoom: 9
   });
+}
 
+export function Mapbox() {
   return (
     <div id="map"></div>
   )
