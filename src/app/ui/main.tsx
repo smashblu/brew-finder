@@ -55,13 +55,17 @@ async function zipSearch(zip) {
   return [];
 }
 
-export function Mapbox() {
-  mapboxgl.accessToken = "pk.eyJ1Ijoic21hc2hibHUiLCJhIjoiY201eDF0dTI5MDRpMTJqcTVieTNuZHNweCJ9.ynSYSc_J3rnPLBf9zR3rWw";
+export function CreateMap() {
+  mapboxgl.accessToken = 'pk.eyJ1Ijoic21hc2hibHUiLCJhIjoiY201eDF0dTI5MDRpMTJqcTVieTNuZHNweCJ9.ynSYSc_J3rnPLBf9zR3rWw';
   const map = new mapboxgl.Map({
-    container: "map",
+    container: 'map',
     center: [-117.65, 34.1],
-    zoom: 9,
+    zoom: 9
   });
+}
 
-  return <div id="map"></div>;
+export function Mapbox() {
+  return (
+    <div id="map"></div>
+  )
 }

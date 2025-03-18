@@ -1,6 +1,6 @@
-import "@/styles/page.css";
-import { Header } from "@/ui/header.tsx";
-import { Sidebar, Mapbox } from "@/ui/main";
+import '@/styles/page.css'
+import { Header } from '@/ui/header.tsx'
+import { Sidebar, Mapbox, CreateMap } from '@/ui/main.tsx'
 
 export default function Page() {
   return (
@@ -9,6 +9,7 @@ export default function Page() {
       <div className="main">
         <Sidebar />
         <Mapbox />
+        <CreateMap />
       </div>
     </div>
   );
