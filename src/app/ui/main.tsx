@@ -63,9 +63,3 @@ export function CreateMap() {
     zoom: 9
   });
 }
-
-export function Mapbox() {
-  return (
-    <div id="map"></div>
-  )
-}

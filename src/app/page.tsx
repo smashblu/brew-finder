@@ -8,8 +8,7 @@ export default function Page() {
       <Header />
       <div className="main">
         <Sidebar />
-        <Mapbox />
-        <CreateMap />
+        <div id="map"><CreateMap /></div>
       </div>
     </div>
   );
