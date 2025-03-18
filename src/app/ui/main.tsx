@@ -1,11 +1,11 @@
-import "@/styles/main.css";
-import "mapbox-gl/dist/mapbox-gl.css";
-import mapboxgl from "mapbox-gl";
-import { FormButton, FormInput, FormLabel } from "@/ui/buttons";
+import '@/styles/main.css';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import mapboxgl from 'mapbox-gl';
+import { FormButton, FormInput, FormLabel } from '@/ui/buttons';
 
 export async function Sidebar() {
   async function handleClick(e) {
-    const userZip = e.get("zip");
+    const userZip = e.get('zip');
     if (userZip) {
       const searchResults = await zipSearch(userZip);
       console.log(searchResults);
@@ -39,8 +39,8 @@ export async function Sidebar() {
 }
 
 async function zipSearch(zip) {
-  const brewDB = "https://api.openbrewerydb.org/v1/breweries";
-  const byPostal = "?by_postal=";
+  const brewDB = 'https://api.openbrewerydb.org/v1/breweries';
+  const byPostal = '?by_postal=';
   try {
     const response = await fetch(`${brewDB}${byPostal}${zip}`);
     if (!response.ok) {

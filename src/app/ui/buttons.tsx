@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import "@/styles/main.css";
+import '@/styles/main.css';
 
 export function FormLabel({ text, style, htmlfor }) {
   return (
