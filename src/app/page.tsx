@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from "react";
 import '@/styles/styles.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from 'mapbox-gl';
@@ -42,11 +45,17 @@ export function DrawMap() {
   )
 }
 
-export function ZipForm() {
-  /* async function zipSearch(zip) {
-    'use server';
+function ZipForm() {
+  const [zip, setZip] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    zipSearch(zip);
+  }
+
+  async function zipSearch(zip) {
     const brewDB = 'https://api.openbrewerydb.org/v1/breweries';
-    const byPostal = '?by_postal=';
+    const byPostal = '?by_postal='
     try {
       const response = await fetch(`${brewDB}${byPostal}${zip}`);
       if (!response.ok) {
@@ -59,19 +68,18 @@ export function ZipForm() {
       console.error(error.message);
     }
     return [];
-  } */
-
-  async function userInput(formData) {
-    'use server';
-    // const searchResults = zipSearch(formData.get("zip-code"));
-    const searchResults = formData.get("zip-code");
-    console.log(`${searchResults}`);
   }
 
   return (
-    <form action={userInput}>
-      <input name="zip-code" />
-      <button type="submit">Search</button>
+    <form onSubmit={handleSubmit}>
+      <label>Zip Code:
+        <input 
+          type="text" 
+          value={zip}
+          onChange={(e) => setZip(e.target.value)}
+        />
+      </label>
+      <input type="submit" />
     </form>
   )
 }
