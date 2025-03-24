@@ -28,7 +28,7 @@ export function Sidebar() {
   return (
     <div id="sidebar">
       <div id="side-sub">
-        <form>FORM</form>
+        <ZipForm />
       </div>
     </div>
   )
@@ -40,4 +40,19 @@ export function DrawMap() {
       <h1>MAP</h1>
     </div>
   )
+}
+
+export function ZipForm() {
+  async function zipSearch(formData) {
+    'use server';
+    const query = formData.get("query");
+    alert(`You searched for '${query}'`);
+  }
+
+  return (
+    <form action={zipSearch}>
+      <input name="query" />
+      <button type="submit">Search</button>
+    </form>
+  );
 }
