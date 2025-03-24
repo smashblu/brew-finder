@@ -4,6 +4,29 @@
     min-width: 960px;
 }
 
+.header {
+    background-color: lightblue;
+    overflow: visible;
+    margin: -10px;
+    padding: 20px 20px;
+    position: relative;
+    z-index: 1000;
+}
+
+.header img {
+    max-width: 5%;
+    vertical-align: text-bottom;
+}
+
+.header h1 {
+    padding-left: 1%;
+    color: white;
+    font-family: Helvetica;
+    font-size: 65px;
+    text-shadow: 2px 2px 4px darkblue;
+    -webkit-text-stroke: 2px black;
+}
+
 .main {
     font-family: Helvetica;
     display: flex;
