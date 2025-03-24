@@ -11,8 +11,8 @@ export default function Page() {
       <Header />
       <div className="main">
         <Sidebar />
+        <DrawMap />
       </div>
-      <DrawMap />
     </div>
   )
 }
