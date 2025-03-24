@@ -43,16 +43,35 @@ export function DrawMap() {
 }
 
 export function ZipForm() {
-  async function zipSearch(formData) {
+  /* async function zipSearch(zip) {
     'use server';
-    const query = formData.get("query");
-    alert(`You searched for '${query}'`);
+    const brewDB = 'https://api.openbrewerydb.org/v1/breweries';
+    const byPostal = '?by_postal=';
+    try {
+      const response = await fetch(`${brewDB}${byPostal}${zip}`);
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+      }
+
+      const brewSet = await response.json();
+      return brewSet;
+    } catch (error) {
+      console.error(error.message);
+    }
+    return [];
+  } */
+
+  async function userInput(formData) {
+    'use server';
+    // const searchResults = zipSearch(formData.get("zip-code"));
+    const searchResults = formData.get("zip-code");
+    console.log(`${searchResults}`);
   }
 
   return (
-    <form action={zipSearch}>
-      <input name="query" />
+    <form action={userInput}>
+      <input name="zip-code" />
       <button type="submit">Search</button>
     </form>
-  );
+  )
 }
