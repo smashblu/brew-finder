@@ -10,7 +10,7 @@ export function FormLabel({ text, style, htmlfor }) {
   );
 }
 
-export function FormButton({ text, style, handleClick }) {
+export function FormButton({ text, style }) {
   return <button className={style}>{text}</button>;
 }
 
@@ -26,19 +26,11 @@ export function FormInput({ type, style, id, placeholder }) {
   );
 }
 
-export async function Sidebar() {
-  async function handleClick(e) {
-    const userZip = e.get('zip');
-    if (userZip) {
-      const searchResults = await zipSearch(userZip);
-      console.log(searchResults);
-    }
-  }
-
+export function Sidebar() {
   return (
     <div id="sidebar">
       <div id="sub-side">
-        <form action={handleClick}>
+        <form>
           <FormLabel
             htmlfor={"location-with-zip"}
             style={"form-label"}
@@ -53,7 +45,10 @@ export async function Sidebar() {
             />
           </div>
           <div className="side-button">
-            <FormButton text={"Submit"} style={"side-button"} />
+            <FormButton 
+              text={"Submit"}
+              style={"side-button"}
+            />
           </div>
         </form>
       </div>
