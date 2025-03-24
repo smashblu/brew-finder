@@ -48,9 +48,10 @@ export function DrawMap() {
 function ZipForm() {
   const [zip, setZip] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    zipSearch(zip);
+    const searchResults = await zipSearch(zip);
+    console.log('results:', searchResults);
   }
 
   async function zipSearch(zip) {
