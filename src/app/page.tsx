@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from 'react';
 import '@/styles/styles.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from 'mapbox-gl';
@@ -38,10 +38,26 @@ export function Sidebar() {
 }
 
 export function DrawMap() {
+  const mapRef = useRef()
+  const mapContainerRef = useRef()
+
+  useEffect(() => {
+    mapboxgl.accessToken = 'pk.eyJ1Ijoic21hc2hibHUiLCJhIjoiY201eDF0dTI5MDRpMTJqcTVieTNuZHNweCJ9.ynSYSc_J3rnPLBf9zR3rWw';
+    mapRef.current = new mapboxgl.Map({
+      container: mapContainerRef.current,
+      center: [-117.65, 34.1],
+      zoom: 9
+    });
+
+    return () => {
+      mapRef.current.remove()
+    }
+  }, [])
+
   return (
-    <div id="map">
-      <h1>MAP</h1>
-    </div>
+    <>
+      <div id="map" ref={mapContainerRef}/>
+    </>
   )
 }
 
