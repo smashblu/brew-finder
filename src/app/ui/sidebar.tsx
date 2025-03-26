@@ -12,11 +12,13 @@ export function Sidebar() {
 }
 
 function ZipForm() {
+  const [results, setResults] = useState([]);
   const [zip, setZip] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const searchResults = await zipSearch(zip);
+    setResults(searchResults);
     console.log('results:', searchResults);
   }
 
