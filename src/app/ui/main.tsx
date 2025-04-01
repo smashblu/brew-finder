@@ -8,20 +8,26 @@ export function Main() {
 
   if (results.length === 0) {
     return (
-      <div id="sidebar">
-        <div id="side-sub">
-          <ZipForm setResults={setResults} />
+      <>
+        <div id="sidebar">
+          <div id="side-sub">
+            <ZipForm setResults={setResults} />
+          </div>
         </div>
-      </div>
+        <DrawMap />
+      </>
     )
   } else {
     return (
-      <div id="sidebar">
-        <div id="side-sub">
-          <ZipForm setResults={setResults} />
-          {results.map((breweries, index) => <ListItem brewery={breweries} listNum={index} key={index} />)}
+      <>
+        <div id="sidebar">
+          <div id="side-sub">
+            <ZipForm setResults={setResults} />
+            {results.map((breweries, index) => <ListItem brewery={breweries} listNum={index} key={index} />)}
+          </div>
         </div>
-      </div>
+        <DrawMap />
+      </>
     )
   }
 }
@@ -90,27 +96,24 @@ export function DrawMap() {
   )
 }
 
-/* import { useEffect, useRef } from "react"
-import mapboxgl from 'mapbox-gl'
 
-const Marker = ({ map, searchResults }) => {
-
-  const markerRef = useRef()
-
-  useEffect(() => {
-    markerRef.current = new mapboxgl.Marker()
-      .setLngLat([searchResults[index].latitude, searchResults[index].longitude])
-      .addTo(map)
-
-    return () => {
-       markerRef.current.remove()
-    }
-  }, [])
-
-  return null
+export function Marker() {
+  /* const Marker = ({ map, searchResults }) => {
+  
+    const markerRef = useRef()
+  
+    useEffect(() => {
+      markerRef.current = new mapboxgl.Marker()
+        .setLngLat([searchResults[index].latitude, searchResults[index].longitude])
+        .addTo(map)
+  
+      return () => {
+         markerRef.current.remove()
+      }
+    }, [])
+  
+    return null */
 }
-
-export default Marker */
 
 export function ListItem({ brewery, listNum, key }) {
   return (

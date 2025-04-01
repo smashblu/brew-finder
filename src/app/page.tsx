@@ -2,7 +2,7 @@
 
 import '@/styles/styles.css';
 import { Header } from '@/ui/header'
-import { Main, DrawMap, TestScope } from '@/ui/main'
+import { Main } from '@/ui/main'
 
 export default function Page() {
   return (
@@ -10,7 +10,6 @@ export default function Page() {
       <Header />
       <div className="main">
         <Main />
-        <DrawMap />
       </div>
     </div>
   )
