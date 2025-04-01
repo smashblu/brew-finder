@@ -5,6 +5,12 @@ import mapboxgl from 'mapbox-gl';
 
 export function Main() {
   const [results, setResults] = useState([]);
+
+  const listLoop = [];
+  for (const names of results) {
+    listLoop.push(<ListItem names={names.name} />);
+  }
+
   if (results.length === 0) {
     return (
       <div id="sidebar">
@@ -13,12 +19,12 @@ export function Main() {
         </div>
       </div>
     )
-  } else { 
+  } else {
     return (
       <div id="sidebar">
         <div id="side-sub">
           <ZipForm setResults={setResults} />
-          <h1>{results[0].name}</h1>
+          {listLoop}
         </div>
       </div>
     )
@@ -111,8 +117,8 @@ const Marker = ({ map, searchResults }) => {
 
 export default Marker */
 
-export function TestScope() {
+export function ListItem({ names }) {
   return (
-    <h1>{searchResults}</h1>
+    <h1>{names}</h1>
   )
 }
