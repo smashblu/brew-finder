@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import '@/styles/styles.css';
+import Map from 'react-map-gl/mapbox';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import mapboxgl from 'mapbox-gl';
 
 export function Main() {
   const [results, setResults] = useState([]);
@@ -14,7 +14,16 @@ export function Main() {
             <ZipForm setResults={setResults} />
           </div>
         </div>
-        <DrawMap />
+        <div id="map">
+          <Map
+            mapboxAccessToken="pk.eyJ1Ijoic21hc2hibHUiLCJhIjoiY201eDF0dTI5MDRpMTJqcTVieTNuZHNweCJ9.ynSYSc_J3rnPLBf9zR3rWw"
+            initialViewState={{
+              longitude: -117.65,
+              latitude: 34.1,
+              zoom: 9
+            }}
+          />
+        </div>
       </>
     )
   } else {
@@ -71,31 +80,6 @@ function ZipForm({ setResults }) {
     </form>
   )
 }
-
-export function DrawMap() {
-  const mapRef = useRef()
-  const mapContainerRef = useRef()
-
-  useEffect(() => {
-    mapboxgl.accessToken = 'pk.eyJ1Ijoic21hc2hibHUiLCJhIjoiY201eDF0dTI5MDRpMTJqcTVieTNuZHNweCJ9.ynSYSc_J3rnPLBf9zR3rWw';
-    mapRef.current = new mapboxgl.Map({
-      container: mapContainerRef.current,
-      center: [-117.65, 34.1],
-      zoom: 9
-    });
-
-    return () => {
-      mapRef.current.remove()
-    }
-  }, [])
-
-  return (
-    <>
-      <div id="map" ref={mapContainerRef} />
-    </>
-  )
-}
-
 
 export function Marker() {
   /* const Marker = ({ map, searchResults }) => {
