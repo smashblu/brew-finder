@@ -19,7 +19,7 @@ export function Main() {
       <div id="sidebar">
         <div id="side-sub">
           <ZipForm setResults={setResults} />
-          {results.map((breweries) => <ListItem brewery={breweries} />)}
+          {results.map((breweries, index) => <ListItem brewery={breweries} listNum={index} />)}
         </div>
       </div>
     )
@@ -112,8 +112,11 @@ const Marker = ({ map, searchResults }) => {
 
 export default Marker */
 
-export function ListItem({ brewery }) {
+export function ListItem({ brewery, listNum }) {
   return (
-    <h1>{brewery.name}</h1>
+    <div className="list-item">
+      <a>{listNum + 1}.</a>
+      <a href={brewery.website_url} target="_blank">{brewery.name}</a>
+    </div>
   )
 }
