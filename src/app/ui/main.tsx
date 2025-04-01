@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import '@/styles/styles.css';
-import Map from 'react-map-gl/mapbox';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import Map, { Marker } from 'react-map-gl/mapbox';
 
 export function Main() {
   const [results, setResults] = useState([]);
@@ -16,7 +16,7 @@ export function Main() {
         </div>
         <div id="map">
           <Map
-            mapboxAccessToken="pk.eyJ1Ijoic21hc2hibHUiLCJhIjoiY201eDF0dTI5MDRpMTJqcTVieTNuZHNweCJ9.ynSYSc_J3rnPLBf9zR3rWw"
+            mapboxAccessToken='pk.eyJ1Ijoic21hc2hibHUiLCJhIjoiY201eDF0dTI5MDRpMTJqcTVieTNuZHNweCJ9.ynSYSc_J3rnPLBf9zR3rWw'
             initialViewState={{
               longitude: -117.65,
               latitude: 34.1,
@@ -79,24 +79,6 @@ function ZipForm({ setResults }) {
       <input type="submit" />
     </form>
   )
-}
-
-export function Marker() {
-  /* const Marker = ({ map, searchResults }) => {
-  
-    const markerRef = useRef()
-  
-    useEffect(() => {
-      markerRef.current = new mapboxgl.Marker()
-        .setLngLat([searchResults[index].latitude, searchResults[index].longitude])
-        .addTo(map)
-  
-      return () => {
-         markerRef.current.remove()
-      }
-    }, [])
-  
-    return null */
 }
 
 export function ListItem({ brewery, listNum }) {
