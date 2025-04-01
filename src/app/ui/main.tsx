@@ -16,7 +16,7 @@ export function Main() {
         </div>
         <div id="map">
           <Map
-            mapboxAccessToken={process.env.MAPBOX_TOKEN}
+            mapboxAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
             initialViewState={{
               longitude: -117.65,
               latitude: 34.1,
