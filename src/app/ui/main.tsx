@@ -4,24 +4,34 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from 'mapbox-gl';
 
 export function Main() {
-  return (
-    <div id="sidebar">
-      <div id="side-sub">
-        <ZipForm />
+  const [results, setResults] = useState([]);
+  if (results.length === 0) {
+    return (
+      <div id="sidebar">
+        <div id="side-sub">
+          <ZipForm setResults={setResults} />
+        </div>
       </div>
-    </div>
-  )
+    )
+  } else { 
+    return (
+      <div id="sidebar">
+        <div id="side-sub">
+          <ZipForm setResults={setResults} />
+          <h1>{results[0].name}</h1>
+        </div>
+      </div>
+    )
+  }
 }
 
-function ZipForm() {
-  const [results, setResults] = useState([]);
+function ZipForm({ setResults }) {
   const [zip, setZip] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const searchResults = await zipSearch(zip);
-    setResults(searchResults);
-    console.log('results:', searchResults);
+    setResults([...searchResults]);
   }
 
   async function zipSearch(zip) {
