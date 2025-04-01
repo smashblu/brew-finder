@@ -115,9 +115,9 @@ export function Marker() {
     return null */
 }
 
-export function ListItem({ brewery, listNum, key }) {
+export function ListItem({ brewery, listNum }) {
   return (
-    <div className="list-item" key={key}>
+    <div className="list-item">
       <a>{listNum + 1}.</a>
       <a href={brewery.website_url} target="_blank">{brewery.name}</a>
     </div>
