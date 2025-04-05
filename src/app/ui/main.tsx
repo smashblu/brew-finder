@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
+import Map, { Marker } from 'react-map-gl/mapbox';
 import '@/styles/styles.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import Map, { Marker } from 'react-map-gl/mapbox';
 
 export function Main() {
   const [results, setResults] = useState([]);
@@ -22,10 +22,11 @@ export function Main() {
               latitude: 34.1,
               zoom: 9
             }}
+            mapStyle="mapbox://styles/mapbox/streets-v9"
           />
         </div>
       </>
-    )
+    );
   } else {
     return (
       <>
@@ -35,9 +36,19 @@ export function Main() {
             {results.map((breweries, index) => <ListItem brewery={breweries} listNum={index} key={index} />)}
           </div>
         </div>
-        <DrawMap />
+        <div id="map">
+          <Map
+            mapboxAccessToken="pk.eyJ1Ijoic21hc2hibHUiLCJhIjoiY201eDF0dTI5MDRpMTJqcTVieTNuZHNweCJ9.ynSYSc_J3rnPLBf9zR3rWw"
+            initialViewState={{
+              longitude: -117.65,
+              latitude: 34.1,
+              zoom: 9
+            }}
+            mapStyle="mapbox://styles/mapbox/streets-v9"
+          />
+        </div>
       </>
-    )
+    );
   }
 }
 
@@ -81,7 +92,7 @@ function ZipForm({ setResults }) {
   )
 }
 
-export function ListItem({ brewery, listNum }) {
+function ListItem({ brewery, listNum }) {
   return (
     <div className="list-item">
       <a>{listNum + 1}.</a>
