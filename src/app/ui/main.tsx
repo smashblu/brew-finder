@@ -1,10 +1,16 @@
 import { useRef, useEffect, useState } from 'react';
-import Map, { Marker } from 'react-map-gl/mapbox';
+import Map, { Marker, Popup } from 'react-map-gl/mapbox';
 import '@/styles/styles.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 export function Main() {
   const [results, setResults] = useState([]);
+  const [showPopup, setShowPopup] = useState<boolean>(false);
+
+  function handleClick(e) {
+    showPopup
+    console.log('clicked:', e);
+  }
 
   if (results.length === 0) {
     return (
@@ -51,10 +57,21 @@ export function Main() {
               longitude={breweries.longitude}
               latitude={breweries.latitude}
               anchor="bottom"
-              key={index}
-            >
+              onClick={handleClick}
+              key={index}>
               <b>{index + 1}</b>
             </Marker>)}
+
+            {results.map((breweries, index) => <Popup 
+              longitude={breweries.longitude}
+              latitude={breweries.latitude}
+              anchor="top"
+              onClose={() => setShowPopup(false)}
+              key={index}>
+              <h3>{breweries.name}</h3>
+              <p>{breweries.address_1}</p>
+              <p>{breweries.city}, {breweries.state_province} {breweries.postal_code}</p>
+            </Popup>)}
           </Map>
         </div>
       </>
