@@ -26,7 +26,7 @@ export function Main() {
           />
         </div>
       </>
-    );
+    )
   } else {
     return (
       <>
@@ -44,11 +44,21 @@ export function Main() {
               latitude: 34.1,
               zoom: 9
             }}
-            mapStyle="mapbox://styles/mapbox/streets-v9"
-          />
+            mapStyle="mapbox://styles/mapbox/streets-v12"
+          >
+
+            {results.map((breweries, index) => <Marker 
+              longitude={breweries.longitude}
+              latitude={breweries.latitude}
+              anchor="bottom"
+              key={index}
+            >
+              <b>{index + 1}</b>
+            </Marker>)}
+          </Map>
         </div>
       </>
-    );
+    )
   }
 }
 
