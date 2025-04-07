@@ -70,8 +70,8 @@
     padding-bottom: 15px;
 }
 
-.marker {
-    background-image: url('../images/red_marker.png');
+.mapboxgl-marker {
+    background-image: url('../../public/red_marker.png');
     background-size: cover;
     width: 35px;
     height: 56px;
@@ -80,11 +80,11 @@
     padding-top: 5px;
 }
 
-.marker:hover {
-    background-image: url('../images/yellow_marker.png');
+.mapboxgl-marker:hover {
+    background-image: url('../../public/yellow_marker.png');
 }
 
-.marker b {
+.mapboxgl-marker b {
     color: white;
     font-size: large;
     -webkit-text-stroke: 1px black;
