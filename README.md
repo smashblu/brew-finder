@@ -7,7 +7,7 @@
 
 ## Introduction
 
-`Brew Finder` is a React site that will find breweries in any given area.
+`Brew Finder` is a NextJS site that will find breweries in any given area.
 
 ## APIs
 
